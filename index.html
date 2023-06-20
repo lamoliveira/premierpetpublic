@@ -3569,142 +3569,144 @@
 
 
 
-    
+
     <script type="text/javascript" src="https://us-east-1.online.tableau.com/javascripts/api/tableau-2.9.1.min.js"></script>
+   
+      
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    window.addEventListener("load", mediaSizer);
- 
-
-    var vizList = [
-
-        "https://public.tableau.com/views/3-Exemplotemplatedemopremier/DashExemplo?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
-        "https://public.tableau.com/views/HUMANRESOURCES-HRExpensesDashboardBrasilpremier/Cockpit?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
-        "https://us-east-1.online.tableau.com/t/luizoliveira/views/PrevistoxRealizado_16872784256150/AnliseMensal/b34cd958-b5bc-47bf-a5d9-a166c2f17084/e68d99e4-92a9-4f6b-ad7b-420e6eee67aa",
-        "https://public.tableau.com/views/FinanasCorporativas-PainelDemonstrativoFinanceiropremier/Cockpit-Finance?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
-        "https://public.tableau.com/views/ContractManagementpremier/ExecutiveSummary?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
-        "https://public.tableau.com/views/ContractManagementpremier/ExecutiveSummary?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
-        "https://public.tableau.com/views/SUPPLYCHAIN-InventoryDashboardpremier/ExecutiveSummary?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
-        "https://public.tableau.com/views/SUPPLYCHAIN-ProductionScrapsDashboardpremier/ExecutiveSummary?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
-        "https://public.tableau.com/views/SUPPLYCHAIN-StockCoverageABC-XYZDashboardpremier/StockCoverage?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
-        "https://public.tableau.com/views/SUPPLYCHAIN-SupplyIntelligencepremier/P-Shortages?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
-        "https://public.tableau.com/views/1-DesigningEffectiveDashboardsPublic/Intro?:language=en-US&:display_count=n&:origin=viz_share_link",
-        "https://public.tableau.com/views/Embedded_Analytics/Introduo?:language=en-US&:display_count=n&:origin=viz_share_link"
-        
-    ];
-    // Array of Tableau Server URLs for dashboard or sheet navigation.
-
-    var viz,
-        vizLen = vizList.length,
-        vizCount = 0,
-        devType,
-        vHideTabs = true,
-        vHeight = 800;
-			vWidth = 415;
-            vHideToolbar = true;
-    var options = {
-        device: devType,
-    };
+        window.addEventListener("load", mediaSizer);
 
 
-    function mediaSizer() {
-        // Determines the correct viz layout according to screen sizes.
-        if (window.matchMedia("(max-width: 480px)").matches) {
-            //alert("I am a phone layout!");
-            devType = 'phone';
-            vWidth = 415;
-            vHeight = 2000;
-            //options.device = 'phone';
-        } else if (window.matchMedia("(max-width: 980px)").matches) {
-            //alert("I am a tablet layout!");
-            devType = 'tablet';
-            vWidth = 980;
-            //options.device = 'tablet';
-        } else {
-            //alert("I am a desktop layout!");
-            devType = 'desktop';
-            vWidth = 1666;
-            vHeight = 900;
-            //options.device = 'desktop';
-        }
-        console.log("devtype: " + devType)
-        console.log("launch0")
-        launchViz(0);
+        var vizList = [
 
-        launchViz(1);
-        //launchViz(2);
-        launchViz(3);
+            "https://public.tableau.com/views/3-Exemplotemplatedemopremier/DashExemplo?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/HUMANRESOURCES-HRExpensesDashboardBrasilpremier/Cockpit?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+            "https://us-east-1.online.tableau.com/t/luizoliveira/views/PrevistoxRealizado_16872784256150/AnliseMensal/b34cd958-b5bc-47bf-a5d9-a166c2f17084/e68d99e4-92a9-4f6b-ad7b-420e6eee67aa",
+            "https://public.tableau.com/views/FinanasCorporativas-PainelDemonstrativoFinanceiropremier/Cockpit-Finance?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/ContractManagementpremier/ExecutiveSummary?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/ContractManagementpremier/ExecutiveSummary?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/SUPPLYCHAIN-InventoryDashboardpremier/ExecutiveSummary?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/SUPPLYCHAIN-ProductionScrapsDashboardpremier/ExecutiveSummary?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/SUPPLYCHAIN-StockCoverageABC-XYZDashboardpremier/StockCoverage?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/SUPPLYCHAIN-SupplyIntelligencepremier/P-Shortages?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/1-DesigningEffectiveDashboardsPublic/Intro?:language=en-US&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/Embedded_Analytics/Introduo?:language=en-US&:display_count=n&:origin=viz_share_link"
 
+        ];
+        // Array of Tableau Server URLs for dashboard or sheet navigation.
 
-        vHideTabs= false;
-        console.log("launch1")
-        if (devType === 'desktop')  {
-			vHeight = 900;}
-			else if (devType === 'phone')
-			{vHeight = 1500;}
-			else {vHeight = 1600;}    
-         launchViz(4);
-         console.log("launch2")
-         if (devType === 'desktop')  {
-			vHeight = 900;}
-			else if (devType === 'phone')
-			{vHeight = 3450;}
-			else {vHeight = 1600;}   
-         launchViz(5);
-         launchViz(6);
-         launchViz(7);
-        launchViz(8);
-        launchViz(9);
-        launchViz(10);
-        launchViz(11);
-        // launchViz(8);
-        // launchViz(9);
+        var viz,
+            vizLen = vizList.length,
+            vizCount = 0,
+            devType,
+            vHideTabs = true,
+            vHeight = 800;
+        vWidth = 415;
+        vHideToolbar = true;
+        var options = {
+            device: devType,
+        };
 
 
+        function mediaSizer() {
+            // Determines the correct viz layout according to screen sizes.
+            if (window.matchMedia("(max-width: 480px)").matches) {
+                //alert("I am a phone layout!");
+                devType = 'phone';
+                vWidth = 415;
+                vHeight = 2000;
+                //options.device = 'phone';
+            } else if (window.matchMedia("(max-width: 980px)").matches) {
+                //alert("I am a tablet layout!");
+                devType = 'tablet';
+                vWidth = 980;
+                //options.device = 'tablet';
+            } else {
+                //alert("I am a desktop layout!");
+                devType = 'desktop';
+                vWidth = 1666;
+                vHeight = 900;
+                //options.device = 'desktop';
+            }
+            console.log("devtype: " + devType)
+            console.log("launch0")
+            launchViz(0);
+
+            launchViz(1);
+            //launchViz(2);
+            launchViz(3);
 
 
-        // Launches the viz again with the new sizing at the current index of vizList.
-    }
+            vHideTabs = false;
+            console.log("launch1")
+            if (devType === 'desktop') {
+                vHeight = 900;
+            }
+            else if (devType === 'phone') { vHeight = 1500; }
+            else { vHeight = 1600; }
+            launchViz(4);
+            console.log("launch2")
+            if (devType === 'desktop') {
+                vHeight = 900;
+            }
+            else if (devType === 'phone') { vHeight = 3450; }
+            else { vHeight = 1600; }
+            launchViz(5);
+            launchViz(6);
+            launchViz(7);
+            launchViz(8);
+            launchViz(9);
+            launchViz(10);
+            launchViz(11);
+            // launchViz(8);
+            // launchViz(9);
 
 
-    function launchViz(vizNav) {
-        // JS object targeting a div in the html document. (vizNav) will pass navigation values to move back and forth across vizList.
-        console.log("vizContainer" + vizNav)
-        console.log("devtype: " + devType)
-        var vizDiv = document.getElementById("vizContainer" + vizNav),
-            // Will embed the visualization on a div with id="VizContainer"
-            options = {
-                device: devType,
-                width: vWidth,
-                height: vHeight,
-                hideTabs: vHideTabs,
-                hideToolbar: vHideToolbar,
-                onFirstInteractive: function () {
-                    listenToMarksSelection();
-                }
-            };
 
 
-        var vizURL = vizList[vizNav];
-        // Dynamic URL returning the string from vizList at index = vizNav (viz to be displayed).
-
-        try {
-            // Initializes the viz from the array with desired options. 
-            viz = new tableau.Viz(vizDiv, vizURL, options);
-            if (!viz) throw 'viz not initialized'
-        }
-        catch (err) {
-            alert(err);
-        }
-        finally {
-            console.log('whatever')
-            console.count('initViz')
+            // Launches the viz again with the new sizing at the current index of vizList.
         }
 
-    }
 
-</script>
+        function launchViz(vizNav) {
+            // JS object targeting a div in the html document. (vizNav) will pass navigation values to move back and forth across vizList.
+            console.log("vizContainer" + vizNav)
+            console.log("devtype: " + devType)
+            var vizDiv = document.getElementById("vizContainer" + vizNav),
+                // Will embed the visualization on a div with id="VizContainer"
+                options = {
+                    device: devType,
+                    width: vWidth,
+                    height: vHeight,
+                    hideTabs: vHideTabs,
+                    hideToolbar: vHideToolbar,
+                    onFirstInteractive: function () {
+                        listenToMarksSelection();
+                    }
+                };
+
+
+            var vizURL = vizList[vizNav];
+            // Dynamic URL returning the string from vizList at index = vizNav (viz to be displayed).
+
+            try {
+                // Initializes the viz from the array with desired options. 
+                viz = new tableau.Viz(vizDiv, vizURL, options);
+                if (!viz) throw 'viz not initialized'
+            }
+            catch (err) {
+                alert(err);
+            }
+            finally {
+                console.log('whatever')
+                console.count('initViz')
+            }
+
+        }
+
+    </script>
 
 
 
@@ -3984,11 +3986,13 @@
                                 <li id="menu-item-115860"
                                     class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-page-parent menu-item-115860">
                                     <a href="https://www.premierpet.com.br/a-empresa/" class="header-a-empresa">Sobre
-                                        nós</a></li>
+                                        nós</a>
+                                </li>
                                 <li id="menu-item-186137"
                                     class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-834 current_page_item menu-item-186137">
                                     <a href="https://www.premierpet.com.br/a-empresa/a-premierpet/" aria-current="page"
-                                        class="header-a-empresa-a-premierpet">A PremieRpet®</a></li>
+                                        class="header-a-empresa-a-premierpet">A PremieRpet®</a>
+                                </li>
                                 <li id="menu-item-193626"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-193626"><a
                                         href="https://www.premierpet.com.br/linha-do-tempo/"
@@ -4196,36 +4200,40 @@
 
 
 
-            
+
 
 
             <div style="text-align: center;">
-                    <div style="display: inline-block;">
-                        <p>-</p>
-                        <a> O obejtivo dos dashboards embeddados baixo é que você possa se inspirar com as possibilidades que a criação de cultura de dados pode trazer para sua empresa, clientes e parceiros.</a> 
-                            <p>Este é um exemplo que demonstra o que seria um template para acelerar o tempo de criação na sua comunidade de usuários</p>
-                        <p>-</p>
-                        <div id="vizContainer0"></div>
-                    </div>
+                <div style="display: inline-block;">
+                    <p>-</p>
+                    <a> O obejtivo dos dashboards embeddados baixo é que você possa se inspirar com as possibilidades
+                        que a criação de cultura de dados pode trazer para sua empresa, clientes e parceiros.</a>
+                    <p>Este é um exemplo que demonstra o que seria um template para acelerar o tempo de criação na sua
+                        comunidade de usuários</p>
+                    <p>-</p>
+                    <div id="vizContainer0"></div>
                 </div>
-                <div style="text-align: center;">
-                    <div style="display: inline-block;">
-  
-                        <p>-</p>
-                        <a> Esse Cockpit de despesas abaixo faz parte de nossos aceleradores que podem ajudar em diversas áreas de sua empresa e vale a pena conferir quais podem ajuda-los a atingir resultados mais rápidos.</a>
-                        <p>-</p>
-                        <div id="vizContainer1"></div>
-                    </div>
+            </div>
+            <div style="text-align: center;">
+                <div style="display: inline-block;">
+
+                    <p>-</p>
+                    <a> Esse Cockpit de despesas abaixo faz parte de nossos aceleradores que podem ajudar em diversas
+                        áreas de sua empresa e vale a pena conferir quais podem ajuda-los a atingir resultados mais
+                        rápidos.</a>
+                    <p>-</p>
+                    <div id="vizContainer1"></div>
                 </div>
-                // <div style="text-align: center;">
-                //     <div style="display: inline-block;">
-                //         <p>-</p>
-                //         <a> Dashboard de inspiração sobre o acompanhamento de projetos ou centros de custo e lucro para avaliar previsto e realizado, e neste caso voce pode clicar nas barras para navegar nos resultados no que chamamos de guided analytics</a>
-                //         <p>-</p>
-                //         <div id="vizContainer2"></div>
-                //     </div>
-                // </div>
-                // <div style="text-align: center;">
+            </div>
+            <!--   <div style="text-align: center;">
+                     <div style="display: inline-block;">
+                         <p>-</p>
+                         <a> Dashboard de inspiração sobre o acompanhamento de projetos ou centros de custo e lucro para avaliar previsto e realizado, e neste caso voce pode clicar nas barras para navegar nos resultados no que chamamos de guided analytics</a>
+                         <p>-</p>
+                         <div id="vizContainer2"></div>
+                     </div>
+                 </div> -->
+                 <div style="text-align: center;">
                     <div style="display: inline-block;">
                         <p>-</p>
                         <a> Mais um exemplo de aceleradores, agora na parte financeira. Clicando no menu na parte superior direita voce pode navegar pelas diversas visões</a>
@@ -4288,7 +4296,7 @@
                 <div style="display: inline-block;">
                     <p>-</p>
                     <p> O dashboard a seguir é um exemplo de webinar que utilizamos no inicio da jornada para criação de um data product com Tableau Embedded. </p>
-                        <p>Tem muita informação relevante para que voce possa conhecer um pouco mais sobre como se beneficiar da cultura de dados embeddado em seus aplicativos para todos os seus stakeholders</>
+                        <p>Tem muita informação relevante para que voce possa conhecer um pouco mais sobre como se beneficiar da cultura de dados embeddada em seus aplicativos para todos os seus stakeholders</>
                         <p>-</p>
                 <div id="vizContainer11"></div>
                 </div>
@@ -5193,245 +5201,251 @@
         }
     </script>
     <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '396643314858442');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=396643314858442&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
-    <script>
-        (function () {
-            var s = document.createElement('script');
-            s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk.js';
-            s.setAttribute('data-tenant-uuid', '31728750-3e2f-4051-961b-52989f221d1b');
-            s.setAttribute('data-domain-uuid', 'ee92e37f-d5dd-4efe-856e-7fba3b3b1b26');
-            s.setAttribute('data-backend-url', 'https://app.securiti.ai');
-            s.defer = true;
-            var parent_node = document.head || document.body;
-            parent_node.appendChild(s);
-            s.addEventListener('load', function () { window.initCmp(); });
-        })()
-    </script>
+            <script>
+                !function (f, b, e, v, n, t, s) {
+                    if (f.fbq) return; n = f.fbq = function () {
+                        n.callMethod ?
+                            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    };
+                    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+                    n.queue = []; t = b.createElement(e); t.async = !0;
+                    t.src = v; s = b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t, s)
+                }(window, document, 'script',
+                    'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '396643314858442');
+                fbq('track', 'PageView');
+            </script>
+            <noscript><img height="1" width="1" style="display:none"
+                    src="https://www.facebook.com/tr?id=396643314858442&ev=PageView&noscript=1" /></noscript>
+            <!-- End Meta Pixel Code -->
+            <script>
+                (function () {
+                    var s = document.createElement('script');
+                    s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk.js';
+                    s.setAttribute('data-tenant-uuid', '31728750-3e2f-4051-961b-52989f221d1b');
+                    s.setAttribute('data-domain-uuid', 'ee92e37f-d5dd-4efe-856e-7fba3b3b1b26');
+                    s.setAttribute('data-backend-url', 'https://app.securiti.ai');
+                    s.defer = true;
+                    var parent_node = document.head || document.body;
+                    parent_node.appendChild(s);
+                    s.addEventListener('load', function () { window.initCmp(); });
+                })()
+            </script>
 
-    <script src="https://plugin.handtalk.me/web/latest/handtalk.min.js"></script>
-    <div style="position: static;">
-        <div style="height: 1px; width: 1px; position: absolute; z-index: 100000; top: 0px; visibility: hidden;"><iframe
-                id="a2a_sm_ifr" title="AddToAny Utility Frame" transparency="true" allowtransparency="true"
-                frameborder="0" src="https://static.addtoany.com/menu/sm.24.html#type=core&amp;event=load"
-                style="height: 1px; width: 1px; border: 0px; left: 0px; top: 0px; position: absolute; z-index: 100000; display: none;"></iframe>
-        </div>
-    </div>
-    <script>
-        var ht = new HT({
-            token: "a6f2200b43ad6c0edcc41e5ada8536ce",
-            avatar: "MAYA",
-            pageSpeech: true
-        });
-    </script>
-    <div class="ht-skip" style="z-index: 1000000;">
-        <div opacity="100" class="sc-gPEVay kMdZPm">
-            <div class="sc-iRbamj dzBoqF"><button aria-label="Ativar Leitor de Sites" class="sc-htpNat khTGzr"><svg
-                        width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M9.54656 13.0034C11.3543 13.0034 12.8198 11.5379 12.8198 9.73007C12.8198 7.92228 11.3543 6.45678 9.54656 6.45678C7.73877 6.45678 6.27327 7.92228 6.27327 9.73007C6.27327 11.5379 7.73877 13.0034 9.54656 13.0034Z"
-                            fill="#333333"></path>
-                        <path
-                            d="M9.54657 14.64C7.36165 14.64 3 15.7365 3 17.9133V18.7316C3 19.1817 3.36824 19.5499 3.81832 19.5499H15.2748C15.7249 19.5499 16.0931 19.1817 16.0931 18.7316V17.9133C16.0931 15.7365 11.7315 14.64 9.54657 14.64ZM14.8411 8.72352C15.103 9.36999 15.103 10.0901 14.8411 10.7366C14.6856 11.1212 14.7511 11.5549 15.0457 11.8495L15.0702 11.8741C15.5449 12.3487 16.355 12.2505 16.666 11.6531C17.2879 10.4665 17.2879 9.0754 16.6496 7.83973C16.3386 7.23418 15.5203 7.11961 15.0375 7.60242L15.0293 7.6106C14.7511 7.89702 14.6856 8.33891 14.8411 8.72352ZM17.8771 4.73011C17.5498 5.05744 17.5007 5.5648 17.7707 5.94123C19.3828 8.18343 19.3746 11.1867 17.7461 13.5107C17.4843 13.8789 17.5416 14.3863 17.8607 14.7054L17.8853 14.73C18.2862 15.131 18.9654 15.0982 19.3091 14.6482C21.5595 11.7513 21.5677 7.79882 19.3091 4.81195C18.9654 4.36187 18.2781 4.32914 17.8771 4.73011Z"
-                            fill="#333333"></path>
-                    </svg>
-                </button><button aria-label="Ativar Hand Talk Plugin" class="sc-htpNat fwTTvS"><svg width="24"
-                        height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M16.6032 8.41814C16.8447 8.38651 17.0904 8.4169 17.3162 8.50632C17.542 8.59575 17.7401 8.74111 17.8909 8.9281C18.2618 9.35055 18.7256 9.68548 19.2478 9.9078C19.6888 10.0917 19.852 10.4364 19.9475 10.8458C20.0842 11.4391 19.9313 12.0051 19.7476 12.5596C19.5786 13.1095 19.3703 13.6471 19.1243 14.1685C18.7854 14.8673 18.6222 15.6351 18.648 16.408C18.648 17.2081 18.648 18.0097 18.648 18.8099C18.648 19.0426 18.6215 19.2753 18.601 19.5066C18.5774 19.7766 18.4275 19.926 18.1864 19.9375C18.1299 19.9392 18.0735 19.93 18.0207 19.9103C17.9678 19.8906 17.9195 19.8608 17.8785 19.8228C17.8374 19.7847 17.8046 19.739 17.7817 19.6885C17.7589 19.6379 17.7465 19.5834 17.7454 19.5281C17.6925 19.1244 17.6498 18.7179 17.5984 18.3143C17.5367 17.7497 17.4823 17.1852 17.4088 16.622C17.3883 16.4863 17.3382 16.3565 17.2618 16.2414C17.1353 16.0518 16.9545 16.0589 16.8781 16.2701C16.7751 16.5628 16.696 16.863 16.6414 17.1679C16.44 18.2467 16.2533 19.3227 16.0534 20.4101C16.034 20.5172 16.001 20.6214 15.9549 20.7204C15.8344 20.9804 15.6829 21.0422 15.3757 20.9747C15.2713 20.9542 15.1794 20.8942 15.1199 20.8079C15.0605 20.7216 15.0383 20.6158 15.0582 20.5136C15.1126 19.9117 15.1846 19.3126 15.2508 18.7122C15.3301 18.0025 15.4213 17.2958 15.486 16.5861C15.4711 16.4427 15.4313 16.3028 15.3684 16.1724C15.2529 16.2534 15.1499 16.3501 15.0626 16.4597C14.3325 17.7104 13.6087 18.9655 12.8914 20.2248C12.854 20.3116 12.7932 20.3868 12.7156 20.4424C12.6379 20.4981 12.5462 20.5321 12.4503 20.5408C12.3531 20.5463 12.2562 20.5265 12.1693 20.4836C12.0824 20.4406 12.0087 20.376 11.9556 20.2962C11.9024 20.2165 11.8718 20.1244 11.8668 20.0294C11.8618 19.9344 11.8826 19.8397 11.927 19.7551C12.221 19.067 12.5459 18.3846 12.862 17.7023C13.156 17.0731 13.4573 16.4497 13.744 15.8205C13.8248 15.6438 13.9527 15.4197 13.7513 15.2803C13.5499 15.141 13.4015 15.3493 13.2692 15.48C12.3048 16.4319 11.3424 17.3867 10.382 18.3444C10.3459 18.389 10.3008 18.4259 10.2496 18.4528C10.1983 18.4798 10.142 18.4962 10.084 18.501C10.026 18.5059 9.96765 18.4991 9.91247 18.481C9.85728 18.463 9.80646 18.4341 9.76313 18.3961C9.51175 18.2022 9.4456 17.9264 9.61613 17.6879C9.86603 17.3518 10.1395 17.0329 10.3908 16.6996C11.1685 15.6682 11.9652 14.6497 12.7032 13.591C12.9789 13.1604 13.1945 12.6956 13.3441 12.2091C13.5235 11.6963 13.275 11.4003 12.7223 11.4061C12.321 11.4061 11.9197 11.4463 11.5183 11.4693C11.0435 11.4951 10.5775 11.4693 10.1571 11.2251C9.98363 11.1245 9.78224 11.0082 9.8234 10.7783C9.86456 10.5485 10.0968 10.5571 10.2776 10.5413C11.3493 10.4379 12.3078 10.0428 13.2603 9.5889C14.0292 9.22546 14.8142 8.88932 15.6124 8.58334C15.933 8.48271 16.2666 8.42709 16.6032 8.41814Z"
-                            fill="#333333"></path>
-                        <path
-                            d="M11.9123 13.2692C11.367 14.0348 10.7951 14.7832 10.2247 15.5273C10.1618 15.5914 10.0759 15.629 9.98513 15.6322C9.56617 15.6581 9.14574 15.6739 8.72678 15.6811C8.60161 15.6824 8.47781 15.6554 8.36516 15.602C7.87508 15.3511 7.49902 14.9298 7.31114 14.4212C6.97104 13.5911 6.7394 12.7223 6.6217 11.8355C6.51648 11.1959 6.26526 10.5875 5.88668 10.0557C5.32709 9.21772 4.76946 8.38119 4.21379 7.5461C4.15968 7.45981 4.1106 7.37061 4.06678 7.27891C4.03766 7.23627 4.01747 7.1884 4.00739 7.13809C3.99731 7.08777 3.99754 7.036 4.00807 6.98577C4.0186 6.93554 4.03921 6.88785 4.06872 6.84546C4.09822 6.80306 4.13604 6.76681 4.17998 6.73878C4.26032 6.67696 4.36225 6.64835 4.46393 6.65909C4.5656 6.66983 4.65892 6.71907 4.72389 6.79624C4.92087 6.99592 5.10022 7.20996 5.28103 7.42256C5.74115 7.95838 6.19245 8.49994 6.65698 9.03145C7.27733 9.7296 7.5537 9.55578 7.2347 8.68525C7.20824 8.61199 7.18031 8.5416 7.14797 8.47121C6.69814 7.45704 6.23214 6.4285 5.77349 5.40283C5.7005 5.24362 5.641 5.07883 5.59562 4.91011C5.52065 4.63286 5.61326 4.47915 5.88962 4.3628C6.12924 4.26368 6.30858 4.31539 6.44676 4.56822C6.79957 5.20746 7.13621 5.86108 7.47579 6.50176C7.73598 6.99161 7.99471 7.4829 8.26078 7.97131C8.32037 8.07985 8.39291 8.18111 8.47688 8.27297C8.49784 8.2961 8.52404 8.31412 8.55339 8.32559C8.58274 8.33706 8.61443 8.34167 8.64593 8.33905C8.69003 8.32325 8.72531 8.24137 8.7356 8.18391C8.74664 8.0971 8.74664 8.00928 8.7356 7.92247C8.66504 6.91691 8.5886 5.91135 8.51951 4.89574C8.49893 4.44037 8.44895 3.98212 8.40926 3.52531C8.41135 3.39537 8.46196 3.27065 8.55157 3.17461C8.64118 3.07858 8.76362 3.01786 8.89584 3.00386C9.11046 2.96795 9.42358 3.18773 9.48385 3.45205C9.58528 3.92753 9.6676 4.40877 9.74698 4.88856C9.90575 5.85102 10.0528 6.81348 10.213 7.77451C10.2453 7.96413 10.2762 8.21982 10.5232 8.21839C10.7701 8.21695 10.7672 7.95694 10.8025 7.78744C11.0553 6.47159 11.314 5.15862 11.5742 3.84565C11.6316 3.55835 11.8153 3.43338 12.124 3.4736C12.1911 3.47971 12.2563 3.49875 12.3159 3.52963C12.3754 3.56051 12.4281 3.60261 12.4709 3.6535C12.5137 3.70439 12.5457 3.76306 12.5651 3.82613C12.5846 3.88919 12.591 3.95539 12.5841 4.02091C12.5459 4.59551 12.4959 5.18161 12.4651 5.76339C12.4073 6.79672 12.3587 7.82526 12.3195 8.84901C12.3158 8.93063 12.2866 9.00918 12.2359 9.07413C12.1852 9.13909 12.1154 9.18735 12.0358 9.21245C11.5698 9.36329 11.1082 9.52848 10.6378 9.66208C10.4112 9.70094 10.1825 9.72732 9.95279 9.74109C9.48238 9.81866 9.12957 10.06 9.00756 10.5254C8.94486 10.7454 8.95143 10.9787 9.02643 11.195C9.10142 11.4113 9.24136 11.6004 9.42799 11.7378C9.85816 12.095 10.4027 12.2937 10.9671 12.2995C11.3905 12.3096 11.8153 12.2492 12.2402 12.2622C12.6327 12.2751 12.1255 12.9704 11.9123 13.2692Z"
-                            fill="#333333"></path>
-                    </svg>
-                </button>
-                <div class="sc-bdVaJa kqlLrF">
-                    <div class="sc-bwzfXH gqoqLA"><svg width="16" height="168" viewBox="0 0 16 168" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12.6564 160.563L12.6564 164.672L15.0001 165.453L15.0001 167.945L3.62512 163.711L3.62512 161.539L15.0001 157.281L15.0001 159.773L12.6564 160.563ZM10.7579 164.039L10.7579 161.195L6.50012 162.625L10.7579 164.039ZM11.2111 147.461C12.435 147.55 13.3986 148.003 14.1017 148.82C14.8048 149.633 15.1564 150.706 15.1564 152.039C15.1564 153.497 14.6668 154.646 13.6876 155.484C12.7032 156.318 11.3543 156.734 9.64075 156.734L8.94543 156.734C7.85168 156.734 6.88814 156.542 6.05481 156.156C5.22148 155.771 4.58346 155.221 4.14075 154.508C3.69283 153.789 3.46887 152.956 3.46887 152.008C3.46887 150.695 3.82043 149.638 4.52356 148.836C5.22668 148.034 6.21366 147.57 7.4845 147.445L7.4845 149.789C6.75012 149.846 6.21887 150.052 5.89075 150.406C5.55741 150.755 5.39075 151.289 5.39075 152.008C5.39075 152.789 5.672 153.375 6.2345 153.766C6.79179 154.151 7.65898 154.349 8.83606 154.359L9.69543 154.359C10.9246 154.359 11.823 154.175 12.3907 153.805C12.9585 153.43 13.2423 152.841 13.2423 152.039C13.2423 151.315 13.0782 150.776 12.7501 150.422C12.4168 150.063 11.9038 149.857 11.2111 149.805L11.2111 147.461ZM10.0704 139.078L10.0704 143.578L13.1173 143.578L13.1173 138.297L15.0001 138.297L15.0001 145.922L3.62512 145.922L3.62512 138.313L5.52356 138.313L5.52356 143.578L8.2345 143.578L8.2345 139.078L10.0704 139.078ZM12.0157 131.023C11.573 131.023 11.2345 131.18 11.0001 131.492C10.7605 131.805 10.5105 132.367 10.2501 133.18C9.9845 133.992 9.72408 134.635 9.46887 135.109C8.77096 136.401 7.83085 137.047 6.64856 137.047C6.03398 137.047 5.4871 136.875 5.00793 136.531C4.52356 136.182 4.14596 135.685 3.87512 135.039C3.60429 134.388 3.46887 133.659 3.46887 132.852C3.46887 132.039 3.61731 131.315 3.91419 130.68C4.20585 130.044 4.61991 129.552 5.15637 129.203C5.69283 128.849 6.30221 128.672 6.9845 128.672L6.9845 131.016C6.46366 131.016 6.06002 131.18 5.77356 131.508C5.48189 131.836 5.33606 132.297 5.33606 132.891C5.33606 133.464 5.45846 133.909 5.70325 134.227C5.94283 134.544 6.26054 134.703 6.65637 134.703C7.02616 134.703 7.33606 134.518 7.58606 134.148C7.83606 133.773 8.07043 133.224 8.28918 132.5C8.69023 131.167 9.18762 130.195 9.78137 129.586C10.3751 128.977 11.1147 128.672 12.0001 128.672C12.9845 128.672 13.7579 129.044 14.3204 129.789C14.8777 130.534 15.1564 131.537 15.1564 132.797C15.1564 133.672 14.9975 134.469 14.6798 135.188C14.3569 135.906 13.9168 136.456 13.3595 136.836C12.8022 137.211 12.1564 137.398 11.422 137.398L11.422 135.047C12.6772 135.047 13.3048 134.297 13.3048 132.797C13.3048 132.24 13.1928 131.805 12.9689 131.492C12.7397 131.18 12.422 131.023 12.0157 131.023ZM12.0157 121.18C11.573 121.18 11.2345 121.336 11.0001 121.648C10.7605 121.961 10.5105 122.523 10.2501 123.336C9.9845 124.148 9.72408 124.792 9.46887 125.266C8.77096 126.557 7.83085 127.203 6.64856 127.203C6.03398 127.203 5.4871 127.031 5.00794 126.688C4.52356 126.339 4.14596 125.841 3.87512 125.195C3.60429 124.544 3.46887 123.815 3.46887 123.008C3.46887 122.195 3.61731 121.471 3.91419 120.836C4.20585 120.201 4.61991 119.708 5.15637 119.359C5.69283 119.005 6.30221 118.828 6.9845 118.828L6.9845 121.172C6.46366 121.172 6.06002 121.336 5.77356 121.664C5.48189 121.992 5.33606 122.453 5.33606 123.047C5.33606 123.62 5.45846 124.065 5.70325 124.383C5.94283 124.701 6.26054 124.859 6.65637 124.859C7.02616 124.859 7.33606 124.675 7.58606 124.305C7.83606 123.93 8.07044 123.38 8.28919 122.656C8.69023 121.323 9.18762 120.352 9.78137 119.742C10.3751 119.133 11.1147 118.828 12.0001 118.828C12.9845 118.828 13.7579 119.201 14.3204 119.945C14.8777 120.69 15.1564 121.693 15.1564 122.953C15.1564 123.828 14.9975 124.625 14.6798 125.344C14.3569 126.063 13.9168 126.612 13.3595 126.992C12.8022 127.367 12.1564 127.555 11.422 127.555L11.422 125.203C12.6772 125.203 13.3048 124.453 13.3048 122.953C13.3048 122.396 13.1928 121.961 12.9689 121.648C12.7397 121.336 12.422 121.18 12.0157 121.18ZM15.0001 114.742L15.0001 117.086L3.62512 117.086L3.62512 114.742L15.0001 114.742ZM0.55481 115.469L0.55481 113.008L2.97669 115.172L2.97669 117.008L0.55481 115.469ZM12.1798 108.359L3.62512 105.781L3.62512 103.172L15.0001 107.133L15.0001 109.578L3.62512 113.523L3.62512 110.922L12.1798 108.359ZM10.0704 95.2501L10.0704 99.7501L13.1173 99.7501L13.1173 94.4688L15.0001 94.4688L15.0001 102.094L3.62512 102.094L3.62512 94.4844L5.52356 94.4844L5.52356 99.7501L8.2345 99.7501L8.2345 95.2501L10.0704 95.2501ZM13.1173 90.7501L13.1173 85.7735L15.0001 85.7735L15.0001 93.0938L3.62512 93.0938L3.62512 90.7501L13.1173 90.7501ZM10.0704 73.5938L10.0704 78.0938L13.1173 78.0938L13.1173 72.8126L15.0001 72.8126L15.0001 80.4376L3.62512 80.4376L3.62512 72.8282L5.52356 72.8282L5.52356 78.0938L8.2345 78.0938L8.2345 73.5938L10.0704 73.5938ZM3.62512 68.3751L11.8751 65.4532L3.62512 62.5469L3.62512 59.4688L15.0001 59.4688L15.0001 61.8204L11.8907 61.8204L6.52356 61.586L15.0001 64.6563L15.0001 66.2657L6.53137 69.3282L11.8907 69.0938L15.0001 69.0938L15.0001 71.4376L3.62512 71.4376L3.62512 68.3751ZM13.1173 51.0938L13.1173 46.1172L15.0001 46.1172L15.0001 53.4376L3.62512 53.4376L3.62512 51.0938L13.1173 51.0938ZM15.0001 42.2735L15.0001 44.6172L3.62512 44.6172L3.62512 42.2735L15.0001 42.2735ZM15.0001 40.0938L3.62512 40.0938L3.62512 36.1094C3.62512 34.7292 3.89075 33.6824 4.422 32.9688C4.94804 32.2553 5.72148 31.8985 6.74231 31.8985C7.2996 31.8985 7.79179 32.0417 8.21887 32.3282C8.64075 32.6146 8.95064 33.0131 9.14856 33.5235C9.29439 32.9402 9.58867 32.4818 10.0314 32.1485C10.4741 31.81 11.0157 31.6407 11.6564 31.6407C12.7501 31.6407 13.5782 31.9896 14.1407 32.6876C14.7032 33.3855 14.9897 34.3803 15.0001 35.6719L15.0001 40.0938ZM10.047 37.7501L13.1173 37.7501L13.1173 35.7422C13.1173 35.1902 12.9871 34.7605 12.7267 34.4532C12.4611 34.1407 12.0965 33.9844 11.6329 33.9844C10.5913 33.9844 10.0626 34.5235 10.047 35.6016L10.047 37.7501ZM8.39075 37.7501L8.39075 36.0157C8.36992 34.8334 7.89856 34.2422 6.97669 34.2422C6.46106 34.2422 6.09127 34.3933 5.86731 34.6954C5.63814 34.9922 5.52356 35.4636 5.52356 36.1094L5.52356 37.7501L8.39075 37.7501ZM10.8361 25.6641L10.8361 27.5313L15.0001 27.5313L15.0001 29.8751L3.62512 29.8751L3.62512 25.6485C3.62512 24.3047 3.9246 23.2683 4.52356 22.5391C5.12252 21.81 5.96887 21.4454 7.06262 21.4454C7.83867 21.4454 8.4871 21.6146 9.00794 21.9532C9.52356 22.2865 9.93502 22.7943 10.2423 23.4766L14.8907 21.0157L15.0001 21.0157L15.0001 23.5313L10.8361 25.6641ZM8.93762 27.5313L8.93762 25.6407C8.93762 25.0521 8.78919 24.5964 8.49231 24.2735C8.19023 23.9506 7.77617 23.7891 7.25012 23.7891C6.71367 23.7891 6.29179 23.9428 5.9845 24.2501C5.67721 24.5521 5.52356 25.0183 5.52356 25.6485L5.52356 27.5313L8.93762 27.5313ZM12.6564 13.2344L12.6564 17.3438L15.0001 18.1251L15.0001 20.6172L3.62512 16.3829L3.62512 14.211L15.0001 9.95319L15.0001 12.4454L12.6564 13.2344ZM10.7579 16.711L10.7579 13.8672L6.50012 15.2969L10.7579 16.711ZM12.0157 2.99225C11.573 2.99225 11.2345 3.1485 11.0001 3.461C10.7605 3.7735 10.5105 4.336 10.2501 5.1485C9.9845 5.961 9.72408 6.60423 9.46887 7.07819C8.77096 8.36985 7.83085 9.01569 6.64856 9.01569C6.03398 9.01569 5.4871 8.84381 5.00794 8.50006C4.52356 8.1511 4.14596 7.65371 3.87512 7.00787C3.60429 6.35683 3.46887 5.62767 3.46887 4.82037C3.46887 4.00787 3.61731 3.28392 3.91419 2.6485C4.20585 2.01308 4.61992 1.52089 5.15637 1.17194C5.69283 0.817769 6.30221 0.640686 6.9845 0.640686L6.9845 2.98444C6.46367 2.98444 6.06002 3.1485 5.77356 3.47662C5.48189 3.80475 5.33606 4.26569 5.33606 4.85944C5.33606 5.43235 5.45846 5.87767 5.70325 6.19537C5.94283 6.51308 6.26054 6.67194 6.65637 6.67194C7.02617 6.67194 7.33606 6.48704 7.58606 6.11725C7.83606 5.74225 8.07044 5.19277 8.28919 4.46881C8.69023 3.13548 9.18762 2.16412 9.78137 1.55475C10.3751 0.945374 11.1147 0.640686 12.0001 0.640686C12.9845 0.640686 13.7579 1.01308 14.3204 1.75787C14.8777 2.50267 15.1564 3.50527 15.1564 4.76569C15.1564 5.64069 14.9975 6.43756 14.6798 7.15631C14.3569 7.87506 13.9168 8.42454 13.3595 8.80475C12.8022 9.17975 12.1564 9.36725 11.422 9.36725L11.422 7.01569C12.6772 7.01569 13.3048 6.26569 13.3048 4.76569C13.3048 4.20839 13.1928 3.7735 12.9689 3.461C12.7397 3.1485 12.422 2.99225 12.0157 2.99225Z"
-                                fill="#F5F5F5"></path>
-                        </svg>
+            <script src="https://plugin.handtalk.me/web/latest/handtalk.min.js"></script>
+            <div style="position: static;">
+                <div
+                    style="height: 1px; width: 1px; position: absolute; z-index: 100000; top: 0px; visibility: hidden;">
+                    <iframe id="a2a_sm_ifr" title="AddToAny Utility Frame" transparency="true" allowtransparency="true"
+                        frameborder="0" src="https://static.addtoany.com/menu/sm.24.html#type=core&amp;event=load"
+                        style="height: 1px; width: 1px; border: 0px; left: 0px; top: 0px; position: absolute; z-index: 100000; display: none;"></iframe>
+                </div>
+            </div>
+            <script>
+                var ht = new HT({
+                    token: "a6f2200b43ad6c0edcc41e5ada8536ce",
+                    avatar: "MAYA",
+                    pageSpeech: true
+                });
+            </script>
+            <div class="ht-skip" style="z-index: 1000000;">
+                <div opacity="100" class="sc-gPEVay kMdZPm">
+                    <div class="sc-iRbamj dzBoqF"><button aria-label="Ativar Leitor de Sites"
+                            class="sc-htpNat khTGzr"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.54656 13.0034C11.3543 13.0034 12.8198 11.5379 12.8198 9.73007C12.8198 7.92228 11.3543 6.45678 9.54656 6.45678C7.73877 6.45678 6.27327 7.92228 6.27327 9.73007C6.27327 11.5379 7.73877 13.0034 9.54656 13.0034Z"
+                                    fill="#333333"></path>
+                                <path
+                                    d="M9.54657 14.64C7.36165 14.64 3 15.7365 3 17.9133V18.7316C3 19.1817 3.36824 19.5499 3.81832 19.5499H15.2748C15.7249 19.5499 16.0931 19.1817 16.0931 18.7316V17.9133C16.0931 15.7365 11.7315 14.64 9.54657 14.64ZM14.8411 8.72352C15.103 9.36999 15.103 10.0901 14.8411 10.7366C14.6856 11.1212 14.7511 11.5549 15.0457 11.8495L15.0702 11.8741C15.5449 12.3487 16.355 12.2505 16.666 11.6531C17.2879 10.4665 17.2879 9.0754 16.6496 7.83973C16.3386 7.23418 15.5203 7.11961 15.0375 7.60242L15.0293 7.6106C14.7511 7.89702 14.6856 8.33891 14.8411 8.72352ZM17.8771 4.73011C17.5498 5.05744 17.5007 5.5648 17.7707 5.94123C19.3828 8.18343 19.3746 11.1867 17.7461 13.5107C17.4843 13.8789 17.5416 14.3863 17.8607 14.7054L17.8853 14.73C18.2862 15.131 18.9654 15.0982 19.3091 14.6482C21.5595 11.7513 21.5677 7.79882 19.3091 4.81195C18.9654 4.36187 18.2781 4.32914 17.8771 4.73011Z"
+                                    fill="#333333"></path>
+                            </svg>
+                        </button><button aria-label="Ativar Hand Talk Plugin" class="sc-htpNat fwTTvS"><svg width="24"
+                                height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.6032 8.41814C16.8447 8.38651 17.0904 8.4169 17.3162 8.50632C17.542 8.59575 17.7401 8.74111 17.8909 8.9281C18.2618 9.35055 18.7256 9.68548 19.2478 9.9078C19.6888 10.0917 19.852 10.4364 19.9475 10.8458C20.0842 11.4391 19.9313 12.0051 19.7476 12.5596C19.5786 13.1095 19.3703 13.6471 19.1243 14.1685C18.7854 14.8673 18.6222 15.6351 18.648 16.408C18.648 17.2081 18.648 18.0097 18.648 18.8099C18.648 19.0426 18.6215 19.2753 18.601 19.5066C18.5774 19.7766 18.4275 19.926 18.1864 19.9375C18.1299 19.9392 18.0735 19.93 18.0207 19.9103C17.9678 19.8906 17.9195 19.8608 17.8785 19.8228C17.8374 19.7847 17.8046 19.739 17.7817 19.6885C17.7589 19.6379 17.7465 19.5834 17.7454 19.5281C17.6925 19.1244 17.6498 18.7179 17.5984 18.3143C17.5367 17.7497 17.4823 17.1852 17.4088 16.622C17.3883 16.4863 17.3382 16.3565 17.2618 16.2414C17.1353 16.0518 16.9545 16.0589 16.8781 16.2701C16.7751 16.5628 16.696 16.863 16.6414 17.1679C16.44 18.2467 16.2533 19.3227 16.0534 20.4101C16.034 20.5172 16.001 20.6214 15.9549 20.7204C15.8344 20.9804 15.6829 21.0422 15.3757 20.9747C15.2713 20.9542 15.1794 20.8942 15.1199 20.8079C15.0605 20.7216 15.0383 20.6158 15.0582 20.5136C15.1126 19.9117 15.1846 19.3126 15.2508 18.7122C15.3301 18.0025 15.4213 17.2958 15.486 16.5861C15.4711 16.4427 15.4313 16.3028 15.3684 16.1724C15.2529 16.2534 15.1499 16.3501 15.0626 16.4597C14.3325 17.7104 13.6087 18.9655 12.8914 20.2248C12.854 20.3116 12.7932 20.3868 12.7156 20.4424C12.6379 20.4981 12.5462 20.5321 12.4503 20.5408C12.3531 20.5463 12.2562 20.5265 12.1693 20.4836C12.0824 20.4406 12.0087 20.376 11.9556 20.2962C11.9024 20.2165 11.8718 20.1244 11.8668 20.0294C11.8618 19.9344 11.8826 19.8397 11.927 19.7551C12.221 19.067 12.5459 18.3846 12.862 17.7023C13.156 17.0731 13.4573 16.4497 13.744 15.8205C13.8248 15.6438 13.9527 15.4197 13.7513 15.2803C13.5499 15.141 13.4015 15.3493 13.2692 15.48C12.3048 16.4319 11.3424 17.3867 10.382 18.3444C10.3459 18.389 10.3008 18.4259 10.2496 18.4528C10.1983 18.4798 10.142 18.4962 10.084 18.501C10.026 18.5059 9.96765 18.4991 9.91247 18.481C9.85728 18.463 9.80646 18.4341 9.76313 18.3961C9.51175 18.2022 9.4456 17.9264 9.61613 17.6879C9.86603 17.3518 10.1395 17.0329 10.3908 16.6996C11.1685 15.6682 11.9652 14.6497 12.7032 13.591C12.9789 13.1604 13.1945 12.6956 13.3441 12.2091C13.5235 11.6963 13.275 11.4003 12.7223 11.4061C12.321 11.4061 11.9197 11.4463 11.5183 11.4693C11.0435 11.4951 10.5775 11.4693 10.1571 11.2251C9.98363 11.1245 9.78224 11.0082 9.8234 10.7783C9.86456 10.5485 10.0968 10.5571 10.2776 10.5413C11.3493 10.4379 12.3078 10.0428 13.2603 9.5889C14.0292 9.22546 14.8142 8.88932 15.6124 8.58334C15.933 8.48271 16.2666 8.42709 16.6032 8.41814Z"
+                                    fill="#333333"></path>
+                                <path
+                                    d="M11.9123 13.2692C11.367 14.0348 10.7951 14.7832 10.2247 15.5273C10.1618 15.5914 10.0759 15.629 9.98513 15.6322C9.56617 15.6581 9.14574 15.6739 8.72678 15.6811C8.60161 15.6824 8.47781 15.6554 8.36516 15.602C7.87508 15.3511 7.49902 14.9298 7.31114 14.4212C6.97104 13.5911 6.7394 12.7223 6.6217 11.8355C6.51648 11.1959 6.26526 10.5875 5.88668 10.0557C5.32709 9.21772 4.76946 8.38119 4.21379 7.5461C4.15968 7.45981 4.1106 7.37061 4.06678 7.27891C4.03766 7.23627 4.01747 7.1884 4.00739 7.13809C3.99731 7.08777 3.99754 7.036 4.00807 6.98577C4.0186 6.93554 4.03921 6.88785 4.06872 6.84546C4.09822 6.80306 4.13604 6.76681 4.17998 6.73878C4.26032 6.67696 4.36225 6.64835 4.46393 6.65909C4.5656 6.66983 4.65892 6.71907 4.72389 6.79624C4.92087 6.99592 5.10022 7.20996 5.28103 7.42256C5.74115 7.95838 6.19245 8.49994 6.65698 9.03145C7.27733 9.7296 7.5537 9.55578 7.2347 8.68525C7.20824 8.61199 7.18031 8.5416 7.14797 8.47121C6.69814 7.45704 6.23214 6.4285 5.77349 5.40283C5.7005 5.24362 5.641 5.07883 5.59562 4.91011C5.52065 4.63286 5.61326 4.47915 5.88962 4.3628C6.12924 4.26368 6.30858 4.31539 6.44676 4.56822C6.79957 5.20746 7.13621 5.86108 7.47579 6.50176C7.73598 6.99161 7.99471 7.4829 8.26078 7.97131C8.32037 8.07985 8.39291 8.18111 8.47688 8.27297C8.49784 8.2961 8.52404 8.31412 8.55339 8.32559C8.58274 8.33706 8.61443 8.34167 8.64593 8.33905C8.69003 8.32325 8.72531 8.24137 8.7356 8.18391C8.74664 8.0971 8.74664 8.00928 8.7356 7.92247C8.66504 6.91691 8.5886 5.91135 8.51951 4.89574C8.49893 4.44037 8.44895 3.98212 8.40926 3.52531C8.41135 3.39537 8.46196 3.27065 8.55157 3.17461C8.64118 3.07858 8.76362 3.01786 8.89584 3.00386C9.11046 2.96795 9.42358 3.18773 9.48385 3.45205C9.58528 3.92753 9.6676 4.40877 9.74698 4.88856C9.90575 5.85102 10.0528 6.81348 10.213 7.77451C10.2453 7.96413 10.2762 8.21982 10.5232 8.21839C10.7701 8.21695 10.7672 7.95694 10.8025 7.78744C11.0553 6.47159 11.314 5.15862 11.5742 3.84565C11.6316 3.55835 11.8153 3.43338 12.124 3.4736C12.1911 3.47971 12.2563 3.49875 12.3159 3.52963C12.3754 3.56051 12.4281 3.60261 12.4709 3.6535C12.5137 3.70439 12.5457 3.76306 12.5651 3.82613C12.5846 3.88919 12.591 3.95539 12.5841 4.02091C12.5459 4.59551 12.4959 5.18161 12.4651 5.76339C12.4073 6.79672 12.3587 7.82526 12.3195 8.84901C12.3158 8.93063 12.2866 9.00918 12.2359 9.07413C12.1852 9.13909 12.1154 9.18735 12.0358 9.21245C11.5698 9.36329 11.1082 9.52848 10.6378 9.66208C10.4112 9.70094 10.1825 9.72732 9.95279 9.74109C9.48238 9.81866 9.12957 10.06 9.00756 10.5254C8.94486 10.7454 8.95143 10.9787 9.02643 11.195C9.10142 11.4113 9.24136 11.6004 9.42799 11.7378C9.85816 12.095 10.4027 12.2937 10.9671 12.2995C11.3905 12.3096 11.8153 12.2492 12.2402 12.2622C12.6327 12.2751 12.1255 12.9704 11.9123 13.2692Z"
+                                    fill="#333333"></path>
+                            </svg>
+                        </button>
+                        <div class="sc-bdVaJa kqlLrF">
+                            <div class="sc-bwzfXH gqoqLA"><svg width="16" height="168" viewBox="0 0 16 168" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.6564 160.563L12.6564 164.672L15.0001 165.453L15.0001 167.945L3.62512 163.711L3.62512 161.539L15.0001 157.281L15.0001 159.773L12.6564 160.563ZM10.7579 164.039L10.7579 161.195L6.50012 162.625L10.7579 164.039ZM11.2111 147.461C12.435 147.55 13.3986 148.003 14.1017 148.82C14.8048 149.633 15.1564 150.706 15.1564 152.039C15.1564 153.497 14.6668 154.646 13.6876 155.484C12.7032 156.318 11.3543 156.734 9.64075 156.734L8.94543 156.734C7.85168 156.734 6.88814 156.542 6.05481 156.156C5.22148 155.771 4.58346 155.221 4.14075 154.508C3.69283 153.789 3.46887 152.956 3.46887 152.008C3.46887 150.695 3.82043 149.638 4.52356 148.836C5.22668 148.034 6.21366 147.57 7.4845 147.445L7.4845 149.789C6.75012 149.846 6.21887 150.052 5.89075 150.406C5.55741 150.755 5.39075 151.289 5.39075 152.008C5.39075 152.789 5.672 153.375 6.2345 153.766C6.79179 154.151 7.65898 154.349 8.83606 154.359L9.69543 154.359C10.9246 154.359 11.823 154.175 12.3907 153.805C12.9585 153.43 13.2423 152.841 13.2423 152.039C13.2423 151.315 13.0782 150.776 12.7501 150.422C12.4168 150.063 11.9038 149.857 11.2111 149.805L11.2111 147.461ZM10.0704 139.078L10.0704 143.578L13.1173 143.578L13.1173 138.297L15.0001 138.297L15.0001 145.922L3.62512 145.922L3.62512 138.313L5.52356 138.313L5.52356 143.578L8.2345 143.578L8.2345 139.078L10.0704 139.078ZM12.0157 131.023C11.573 131.023 11.2345 131.18 11.0001 131.492C10.7605 131.805 10.5105 132.367 10.2501 133.18C9.9845 133.992 9.72408 134.635 9.46887 135.109C8.77096 136.401 7.83085 137.047 6.64856 137.047C6.03398 137.047 5.4871 136.875 5.00793 136.531C4.52356 136.182 4.14596 135.685 3.87512 135.039C3.60429 134.388 3.46887 133.659 3.46887 132.852C3.46887 132.039 3.61731 131.315 3.91419 130.68C4.20585 130.044 4.61991 129.552 5.15637 129.203C5.69283 128.849 6.30221 128.672 6.9845 128.672L6.9845 131.016C6.46366 131.016 6.06002 131.18 5.77356 131.508C5.48189 131.836 5.33606 132.297 5.33606 132.891C5.33606 133.464 5.45846 133.909 5.70325 134.227C5.94283 134.544 6.26054 134.703 6.65637 134.703C7.02616 134.703 7.33606 134.518 7.58606 134.148C7.83606 133.773 8.07043 133.224 8.28918 132.5C8.69023 131.167 9.18762 130.195 9.78137 129.586C10.3751 128.977 11.1147 128.672 12.0001 128.672C12.9845 128.672 13.7579 129.044 14.3204 129.789C14.8777 130.534 15.1564 131.537 15.1564 132.797C15.1564 133.672 14.9975 134.469 14.6798 135.188C14.3569 135.906 13.9168 136.456 13.3595 136.836C12.8022 137.211 12.1564 137.398 11.422 137.398L11.422 135.047C12.6772 135.047 13.3048 134.297 13.3048 132.797C13.3048 132.24 13.1928 131.805 12.9689 131.492C12.7397 131.18 12.422 131.023 12.0157 131.023ZM12.0157 121.18C11.573 121.18 11.2345 121.336 11.0001 121.648C10.7605 121.961 10.5105 122.523 10.2501 123.336C9.9845 124.148 9.72408 124.792 9.46887 125.266C8.77096 126.557 7.83085 127.203 6.64856 127.203C6.03398 127.203 5.4871 127.031 5.00794 126.688C4.52356 126.339 4.14596 125.841 3.87512 125.195C3.60429 124.544 3.46887 123.815 3.46887 123.008C3.46887 122.195 3.61731 121.471 3.91419 120.836C4.20585 120.201 4.61991 119.708 5.15637 119.359C5.69283 119.005 6.30221 118.828 6.9845 118.828L6.9845 121.172C6.46366 121.172 6.06002 121.336 5.77356 121.664C5.48189 121.992 5.33606 122.453 5.33606 123.047C5.33606 123.62 5.45846 124.065 5.70325 124.383C5.94283 124.701 6.26054 124.859 6.65637 124.859C7.02616 124.859 7.33606 124.675 7.58606 124.305C7.83606 123.93 8.07044 123.38 8.28919 122.656C8.69023 121.323 9.18762 120.352 9.78137 119.742C10.3751 119.133 11.1147 118.828 12.0001 118.828C12.9845 118.828 13.7579 119.201 14.3204 119.945C14.8777 120.69 15.1564 121.693 15.1564 122.953C15.1564 123.828 14.9975 124.625 14.6798 125.344C14.3569 126.063 13.9168 126.612 13.3595 126.992C12.8022 127.367 12.1564 127.555 11.422 127.555L11.422 125.203C12.6772 125.203 13.3048 124.453 13.3048 122.953C13.3048 122.396 13.1928 121.961 12.9689 121.648C12.7397 121.336 12.422 121.18 12.0157 121.18ZM15.0001 114.742L15.0001 117.086L3.62512 117.086L3.62512 114.742L15.0001 114.742ZM0.55481 115.469L0.55481 113.008L2.97669 115.172L2.97669 117.008L0.55481 115.469ZM12.1798 108.359L3.62512 105.781L3.62512 103.172L15.0001 107.133L15.0001 109.578L3.62512 113.523L3.62512 110.922L12.1798 108.359ZM10.0704 95.2501L10.0704 99.7501L13.1173 99.7501L13.1173 94.4688L15.0001 94.4688L15.0001 102.094L3.62512 102.094L3.62512 94.4844L5.52356 94.4844L5.52356 99.7501L8.2345 99.7501L8.2345 95.2501L10.0704 95.2501ZM13.1173 90.7501L13.1173 85.7735L15.0001 85.7735L15.0001 93.0938L3.62512 93.0938L3.62512 90.7501L13.1173 90.7501ZM10.0704 73.5938L10.0704 78.0938L13.1173 78.0938L13.1173 72.8126L15.0001 72.8126L15.0001 80.4376L3.62512 80.4376L3.62512 72.8282L5.52356 72.8282L5.52356 78.0938L8.2345 78.0938L8.2345 73.5938L10.0704 73.5938ZM3.62512 68.3751L11.8751 65.4532L3.62512 62.5469L3.62512 59.4688L15.0001 59.4688L15.0001 61.8204L11.8907 61.8204L6.52356 61.586L15.0001 64.6563L15.0001 66.2657L6.53137 69.3282L11.8907 69.0938L15.0001 69.0938L15.0001 71.4376L3.62512 71.4376L3.62512 68.3751ZM13.1173 51.0938L13.1173 46.1172L15.0001 46.1172L15.0001 53.4376L3.62512 53.4376L3.62512 51.0938L13.1173 51.0938ZM15.0001 42.2735L15.0001 44.6172L3.62512 44.6172L3.62512 42.2735L15.0001 42.2735ZM15.0001 40.0938L3.62512 40.0938L3.62512 36.1094C3.62512 34.7292 3.89075 33.6824 4.422 32.9688C4.94804 32.2553 5.72148 31.8985 6.74231 31.8985C7.2996 31.8985 7.79179 32.0417 8.21887 32.3282C8.64075 32.6146 8.95064 33.0131 9.14856 33.5235C9.29439 32.9402 9.58867 32.4818 10.0314 32.1485C10.4741 31.81 11.0157 31.6407 11.6564 31.6407C12.7501 31.6407 13.5782 31.9896 14.1407 32.6876C14.7032 33.3855 14.9897 34.3803 15.0001 35.6719L15.0001 40.0938ZM10.047 37.7501L13.1173 37.7501L13.1173 35.7422C13.1173 35.1902 12.9871 34.7605 12.7267 34.4532C12.4611 34.1407 12.0965 33.9844 11.6329 33.9844C10.5913 33.9844 10.0626 34.5235 10.047 35.6016L10.047 37.7501ZM8.39075 37.7501L8.39075 36.0157C8.36992 34.8334 7.89856 34.2422 6.97669 34.2422C6.46106 34.2422 6.09127 34.3933 5.86731 34.6954C5.63814 34.9922 5.52356 35.4636 5.52356 36.1094L5.52356 37.7501L8.39075 37.7501ZM10.8361 25.6641L10.8361 27.5313L15.0001 27.5313L15.0001 29.8751L3.62512 29.8751L3.62512 25.6485C3.62512 24.3047 3.9246 23.2683 4.52356 22.5391C5.12252 21.81 5.96887 21.4454 7.06262 21.4454C7.83867 21.4454 8.4871 21.6146 9.00794 21.9532C9.52356 22.2865 9.93502 22.7943 10.2423 23.4766L14.8907 21.0157L15.0001 21.0157L15.0001 23.5313L10.8361 25.6641ZM8.93762 27.5313L8.93762 25.6407C8.93762 25.0521 8.78919 24.5964 8.49231 24.2735C8.19023 23.9506 7.77617 23.7891 7.25012 23.7891C6.71367 23.7891 6.29179 23.9428 5.9845 24.2501C5.67721 24.5521 5.52356 25.0183 5.52356 25.6485L5.52356 27.5313L8.93762 27.5313ZM12.6564 13.2344L12.6564 17.3438L15.0001 18.1251L15.0001 20.6172L3.62512 16.3829L3.62512 14.211L15.0001 9.95319L15.0001 12.4454L12.6564 13.2344ZM10.7579 16.711L10.7579 13.8672L6.50012 15.2969L10.7579 16.711ZM12.0157 2.99225C11.573 2.99225 11.2345 3.1485 11.0001 3.461C10.7605 3.7735 10.5105 4.336 10.2501 5.1485C9.9845 5.961 9.72408 6.60423 9.46887 7.07819C8.77096 8.36985 7.83085 9.01569 6.64856 9.01569C6.03398 9.01569 5.4871 8.84381 5.00794 8.50006C4.52356 8.1511 4.14596 7.65371 3.87512 7.00787C3.60429 6.35683 3.46887 5.62767 3.46887 4.82037C3.46887 4.00787 3.61731 3.28392 3.91419 2.6485C4.20585 2.01308 4.61992 1.52089 5.15637 1.17194C5.69283 0.817769 6.30221 0.640686 6.9845 0.640686L6.9845 2.98444C6.46367 2.98444 6.06002 3.1485 5.77356 3.47662C5.48189 3.80475 5.33606 4.26569 5.33606 4.85944C5.33606 5.43235 5.45846 5.87767 5.70325 6.19537C5.94283 6.51308 6.26054 6.67194 6.65637 6.67194C7.02617 6.67194 7.33606 6.48704 7.58606 6.11725C7.83606 5.74225 8.07044 5.19277 8.28919 4.46881C8.69023 3.13548 9.18762 2.16412 9.78137 1.55475C10.3751 0.945374 11.1147 0.640686 12.0001 0.640686C12.9845 0.640686 13.7579 1.01308 14.3204 1.75787C14.8777 2.50267 15.1564 3.50527 15.1564 4.76569C15.1564 5.64069 14.9975 6.43756 14.6798 7.15631C14.3569 7.87506 13.9168 8.42454 13.3595 8.80475C12.8022 9.17975 12.1564 9.36725 11.422 9.36725L11.422 7.01569C12.6772 7.01569 13.3048 6.26569 13.3048 4.76569C13.3048 4.20839 13.1928 3.7735 12.9689 3.461C12.7397 3.1485 12.422 2.99225 12.0157 2.99225Z"
+                                        fill="#F5F5F5"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sc-kpOJdX UVpYl">
+                        <div class="sc-gqjmRU BUAaC">
+                            <div size="large" class="sc-VigVT hUhYqn">
+                                <div size="large" class="sc-jTzLTM cFIzYb"></div>
+                            </div>
+                            <p size="large" class="sc-fjdhpX fxKQxL">Carregando<span>...</span></p>
+                        </div><button tabindex="0" aria-describedby="linkDescription" size="small"
+                            class="sc-gZMcBi cOgzWG"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.25 19.5C5.764 19.5 5.35067 19.33 5.01 18.99C4.67 18.6493 4.5 18.236 4.5 17.75V6.25C4.5 5.764 4.67 5.35067 5.01 5.01C5.35067 4.67 5.764 4.5 6.25 4.5H11.208C11.444 4.5 11.649 4.58667 11.823 4.76C11.9963 4.934 12.083 5.139 12.083 5.375C12.083 5.611 11.9963 5.816 11.823 5.99C11.649 6.16333 11.444 6.25 11.208 6.25H6.25V17.75H17.75V12.792C17.75 12.556 17.8367 12.351 18.01 12.177C18.184 12.0037 18.389 11.917 18.625 11.917C18.861 11.917 19.066 12.0037 19.24 12.177C19.4133 12.351 19.5 12.556 19.5 12.792V17.75C19.5 18.236 19.33 18.6493 18.99 18.99C18.6493 19.33 18.236 19.5 17.75 19.5H6.25ZM9.5 14.5C9.33333 14.3333 9.25 14.1283 9.25 13.885C9.25 13.6423 9.33333 13.4377 9.5 13.271L16.521 6.25H14.708C14.472 6.25 14.2673 6.16333 14.094 5.99C13.92 5.816 13.833 5.611 13.833 5.375C13.833 5.139 13.92 4.934 14.094 4.76C14.2673 4.58667 14.472 4.5 14.708 4.5H18.625C18.861 4.5 19.066 4.58667 19.24 4.76C19.4133 4.934 19.5 5.139 19.5 5.375V9.292C19.5 9.528 19.4133 9.73267 19.24 9.906C19.066 10.08 18.861 10.167 18.625 10.167C18.389 10.167 18.184 10.08 18.01 9.906C17.8367 9.73267 17.75 9.528 17.75 9.292V7.479L10.708 14.521C10.5413 14.6877 10.3437 14.771 10.115 14.771C9.88567 14.771 9.68067 14.6807 9.5 14.5Z"
+                                    fill="#333333"></path>
+                            </svg>
+                            Desenvolvido por Hand Talk</button><span id="linkDescription" hidden="">Clique para acessar
+                            o site
+                            da Hand Talk.</span><img
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUyIiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCAyNTIgOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ5Ljg3NSIgaGVpZ2h0PSI4IiBmaWxsPSIjNUI2OUMyIi8+CjxyZWN0IHg9IjQ5Ljg3NSIgd2lkdGg9IjUxLjE4NzUiIGhlaWdodD0iOCIgZmlsbD0iIzQ4QzFGOCIvPgo8cmVjdCB4PSIxMDEuMDYyIiB3aWR0aD0iNDkuODc1IiBoZWlnaHQ9IjgiIGZpbGw9IiNGQ0MwMDIiLz4KPHJlY3QgeD0iMTUwLjkzOCIgd2lkdGg9IjUxLjE4NzUiIGhlaWdodD0iOCIgZmlsbD0iI0ZCOEMwMSIvPgo8cmVjdCB4PSIyMDIuMTI1IiB3aWR0aD0iNDkuODc1IiBoZWlnaHQ9IjgiIGZpbGw9IiMwMEU5QjQiLz4KPC9zdmc+Cg=="
+                            class="sc-dxgOiQ eTRwpj">
                     </div>
                 </div>
             </div>
-            <div class="sc-kpOJdX UVpYl">
-                <div class="sc-gqjmRU BUAaC">
-                    <div size="large" class="sc-VigVT hUhYqn">
-                        <div size="large" class="sc-jTzLTM cFIzYb"></div>
+            <script>
+
+                $(document).ready(function () {
+
+                    // Add class to mailto link
+                    // Needed to separate the disabling of the default action AND copy email to clipboard
+                    $('a[href^=mailto]').addClass('mailto-link');
+
+                    var mailto = $('.mailto-link');
+                    var messageCopy = 'Clique para copiar para ?rea de tranfer?ncia';
+                    var messageSuccess = 'Email copiado para ?rea de transfer?ncia';
+
+                    var telefone = $('.telefone');
+                    var messageSuccessTelefone = 'Telefone copiado para ?rea de transfer?ncia';
+
+
+                    mailto.append('<span class="mailto-message"></span>');
+                    telefone.append('<span class="mailto-message"></span>');
+                    $('.mailto-message').append(messageCopy);
+                    $('.telefone-message').append(messageCopy);
+
+                    // Disable opening your email client. yuk.
+                    $('a[href^=mailto]').click(function () {
+                        return false;
+                    })
+                    $('.telefone').click(function () {
+                        return false;
+                    })
+
+                    // On click, get href and remove 'mailto:' from value
+                    // Store email address in a variable.
+                    mailto.click(function () {
+                        var href = $(this).attr('href');
+                        var email = href.replace('mailto:', '');
+                        copyToClipboard(email);
+                        $('.mailto-link .mailto-message').empty().append(messageSuccess);
+                        setTimeout(function () {
+                            $('.mailto-message').empty().append(messageCopy);
+                        }, 3000);
+                    });
+
+                    telefone.click(function () {
+                        var href = $(this).attr('href');
+                        var tel = href.replace('tel:', '');
+                        copyToClipboard(tel);
+                        $('.telefone .mailto-message').empty().append(messageSuccessTelefone);
+                        setTimeout(function () {
+                            $('.mailto-message').empty().append(messageCopy);
+                        }, 3000);
+                    });
+
+                });
+
+                // Grabbed this from Stack Overflow.
+                // Copies the email variable to clipboard
+                function copyToClipboard(text) {
+                    var dummy = document.createElement("input");
+                    document.body.appendChild(dummy);
+                    dummy.setAttribute('value', text);
+                    dummy.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(dummy);
+                }
+
+            </script>
+
+            <style>
+                .mailto-link {
+                    position: relative;
+                    padding: 8px 0;
+                }
+
+                .mailto-message {
+                    top: 1px;
+                    left: 50%;
+                    margin-bottom: -5px;
+                    transform: translate(-50%, -100%);
+                    position: absolute;
+                    display: none;
+                    width: auto;
+                    white-space: nowrap;
+                    font-size: 12px;
+                    background-color: black;
+                    color: white;
+                    padding: 2px 6px;
+                    border-radius: 2px;
+
+                    &:after,
+                    &:before {
+                        content: '';
+                    }
+
+                    &:before {
+                        top: 100%;
+                        left: 50%;
+                        border: solid transparent;
+                        height: 0;
+                        width: 0;
+                        position: absolute;
+                        pointer-events: none;
+                        border-color: rgba(0, 0, 0, 0);
+                        border-top-color: #000000;
+                        border-width: 4px;
+                        margin-left: -4px;
+                    }
+                }
+
+                .telefone {
+                    position: relative;
+                    padding: 8px 0;
+                }
+
+                .telefone:hover .mailto-message,
+                .telefone:focus .mailto-message,
+                .telefone:focus-within .mailto-message {
+                    display: block;
+                }
+
+                .mailto-link:hover .mailto-message,
+                .mailto-link:focus .mailto-message,
+                .mailto-link:focus-within .mailto-message {
+                    display: block;
+                }
+            </style>
+
+            <iframe id="_hjSafeContext_51785616" title="_hjSafeContext" tabindex="-1" aria-hidden="true"
+                src="about:blank"
+                style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><iframe
+                id="_hjSafeContext_59791649" title="_hjSafeContext" tabindex="-1" aria-hidden="true" src="about:blank"
+                style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
+            <div class="_hj_feedback_container" id="widget-360833">
+                <div class="_hj-s3UIi__styles__globalStyles _hj-Pbej5__styles__resetStyles">
+                    <div class="_hj-YR-2H__Feedback__container"
+                        style="--hjFeedbackAccentColor: #000000; --hjFeedbackAccentHoverColor: #1a1a1a; --hjFeedbackAccentActiveColor: #262626; --hjFeedbackAccentTextColor: #ffffff; --hjFeedbackDisabledAccentColor: #F1F2F6; --hjFeedbackDisabledAccentTextColor: rgba(0, 0, 0, 0.43); --hjFeedbackSecondaryTextColor: #666666; --hjFeedbackBackgroundColor: #ffffff; --hjFeedbackDarkGray: #333333; --hjFeedbackSelectionColor: #ffd902; --hjFeedbackSelectionTextColor: #3c3c3c; --hjFeedbackBorderColor: #e6e6e6; --hjFeedbackOptionButtonBackgroundColor: #e6e6e6; --hjFeedbackInputPlaceholderColor: rgba(255,255,255,0.38);">
+                        <div id="_hj_feedback_container"
+                            class="_hj-zRk2h__Feedback__feedback _hj-z1NGf__Feedback__button">
+                            <div class="_hj-G09L+__MinimizedWidgetMiddle__container _hj-1QuqW__MinimizedWidgetMiddle__left"
+                                style="top: 484.5px;"><button class="_hj-ETLL8__MinimizedWidgetMiddle__label">
+                                    <div class="_hj-Dfxkw__MinimizedWidgetMiddle__text">Feedback</div>
+                                </button></div>
+                        </div>
                     </div>
-                    <p size="large" class="sc-fjdhpX fxKQxL">Carregando<span>...</span></p>
-                </div><button tabindex="0" aria-describedby="linkDescription" size="small" class="sc-gZMcBi cOgzWG"><svg
-                        width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M6.25 19.5C5.764 19.5 5.35067 19.33 5.01 18.99C4.67 18.6493 4.5 18.236 4.5 17.75V6.25C4.5 5.764 4.67 5.35067 5.01 5.01C5.35067 4.67 5.764 4.5 6.25 4.5H11.208C11.444 4.5 11.649 4.58667 11.823 4.76C11.9963 4.934 12.083 5.139 12.083 5.375C12.083 5.611 11.9963 5.816 11.823 5.99C11.649 6.16333 11.444 6.25 11.208 6.25H6.25V17.75H17.75V12.792C17.75 12.556 17.8367 12.351 18.01 12.177C18.184 12.0037 18.389 11.917 18.625 11.917C18.861 11.917 19.066 12.0037 19.24 12.177C19.4133 12.351 19.5 12.556 19.5 12.792V17.75C19.5 18.236 19.33 18.6493 18.99 18.99C18.6493 19.33 18.236 19.5 17.75 19.5H6.25ZM9.5 14.5C9.33333 14.3333 9.25 14.1283 9.25 13.885C9.25 13.6423 9.33333 13.4377 9.5 13.271L16.521 6.25H14.708C14.472 6.25 14.2673 6.16333 14.094 5.99C13.92 5.816 13.833 5.611 13.833 5.375C13.833 5.139 13.92 4.934 14.094 4.76C14.2673 4.58667 14.472 4.5 14.708 4.5H18.625C18.861 4.5 19.066 4.58667 19.24 4.76C19.4133 4.934 19.5 5.139 19.5 5.375V9.292C19.5 9.528 19.4133 9.73267 19.24 9.906C19.066 10.08 18.861 10.167 18.625 10.167C18.389 10.167 18.184 10.08 18.01 9.906C17.8367 9.73267 17.75 9.528 17.75 9.292V7.479L10.708 14.521C10.5413 14.6877 10.3437 14.771 10.115 14.771C9.88567 14.771 9.68067 14.6807 9.5 14.5Z"
-                            fill="#333333"></path>
-                    </svg>
-                    Desenvolvido por Hand Talk</button><span id="linkDescription" hidden="">Clique para acessar o site
-                    da Hand Talk.</span><img
-                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUyIiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCAyNTIgOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ5Ljg3NSIgaGVpZ2h0PSI4IiBmaWxsPSIjNUI2OUMyIi8+CjxyZWN0IHg9IjQ5Ljg3NSIgd2lkdGg9IjUxLjE4NzUiIGhlaWdodD0iOCIgZmlsbD0iIzQ4QzFGOCIvPgo8cmVjdCB4PSIxMDEuMDYyIiB3aWR0aD0iNDkuODc1IiBoZWlnaHQ9IjgiIGZpbGw9IiNGQ0MwMDIiLz4KPHJlY3QgeD0iMTUwLjkzOCIgd2lkdGg9IjUxLjE4NzUiIGhlaWdodD0iOCIgZmlsbD0iI0ZCOEMwMSIvPgo8cmVjdCB4PSIyMDIuMTI1IiB3aWR0aD0iNDkuODc1IiBoZWlnaHQ9IjgiIGZpbGw9IiMwMEU5QjQiLz4KPC9zdmc+Cg=="
-                    class="sc-dxgOiQ eTRwpj">
-            </div>
-        </div>
-    </div>
-    <script>
-
-        $(document).ready(function () {
-
-            // Add class to mailto link
-            // Needed to separate the disabling of the default action AND copy email to clipboard
-            $('a[href^=mailto]').addClass('mailto-link');
-
-            var mailto = $('.mailto-link');
-            var messageCopy = 'Clique para copiar para ?rea de tranfer?ncia';
-            var messageSuccess = 'Email copiado para ?rea de transfer?ncia';
-
-            var telefone = $('.telefone');
-            var messageSuccessTelefone = 'Telefone copiado para ?rea de transfer?ncia';
-
-
-            mailto.append('<span class="mailto-message"></span>');
-            telefone.append('<span class="mailto-message"></span>');
-            $('.mailto-message').append(messageCopy);
-            $('.telefone-message').append(messageCopy);
-
-            // Disable opening your email client. yuk.
-            $('a[href^=mailto]').click(function () {
-                return false;
-            })
-            $('.telefone').click(function () {
-                return false;
-            })
-
-            // On click, get href and remove 'mailto:' from value
-            // Store email address in a variable.
-            mailto.click(function () {
-                var href = $(this).attr('href');
-                var email = href.replace('mailto:', '');
-                copyToClipboard(email);
-                $('.mailto-link .mailto-message').empty().append(messageSuccess);
-                setTimeout(function () {
-                    $('.mailto-message').empty().append(messageCopy);
-                }, 3000);
-            });
-
-            telefone.click(function () {
-                var href = $(this).attr('href');
-                var tel = href.replace('tel:', '');
-                copyToClipboard(tel);
-                $('.telefone .mailto-message').empty().append(messageSuccessTelefone);
-                setTimeout(function () {
-                    $('.mailto-message').empty().append(messageCopy);
-                }, 3000);
-            });
-
-        });
-
-        // Grabbed this from Stack Overflow.
-        // Copies the email variable to clipboard
-        function copyToClipboard(text) {
-            var dummy = document.createElement("input");
-            document.body.appendChild(dummy);
-            dummy.setAttribute('value', text);
-            dummy.select();
-            document.execCommand('copy');
-            document.body.removeChild(dummy);
-        }
-
-    </script>
-
-    <style>
-        .mailto-link {
-            position: relative;
-            padding: 8px 0;
-        }
-
-        .mailto-message {
-            top: 1px;
-            left: 50%;
-            margin-bottom: -5px;
-            transform: translate(-50%, -100%);
-            position: absolute;
-            display: none;
-            width: auto;
-            white-space: nowrap;
-            font-size: 12px;
-            background-color: black;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 2px;
-
-            &:after,
-            &:before {
-                content: '';
-            }
-
-            &:before {
-                top: 100%;
-                left: 50%;
-                border: solid transparent;
-                height: 0;
-                width: 0;
-                position: absolute;
-                pointer-events: none;
-                border-color: rgba(0, 0, 0, 0);
-                border-top-color: #000000;
-                border-width: 4px;
-                margin-left: -4px;
-            }
-        }
-
-        .telefone {
-            position: relative;
-            padding: 8px 0;
-        }
-
-        .telefone:hover .mailto-message,
-        .telefone:focus .mailto-message,
-        .telefone:focus-within .mailto-message {
-            display: block;
-        }
-
-        .mailto-link:hover .mailto-message,
-        .mailto-link:focus .mailto-message,
-        .mailto-link:focus-within .mailto-message {
-            display: block;
-        }
-    </style>
-
-    <iframe id="_hjSafeContext_51785616" title="_hjSafeContext" tabindex="-1" aria-hidden="true" src="about:blank"
-        style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><iframe
-        id="_hjSafeContext_59791649" title="_hjSafeContext" tabindex="-1" aria-hidden="true" src="about:blank"
-        style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
-    <div class="_hj_feedback_container" id="widget-360833">
-        <div class="_hj-s3UIi__styles__globalStyles _hj-Pbej5__styles__resetStyles">
-            <div class="_hj-YR-2H__Feedback__container"
-                style="--hjFeedbackAccentColor: #000000; --hjFeedbackAccentHoverColor: #1a1a1a; --hjFeedbackAccentActiveColor: #262626; --hjFeedbackAccentTextColor: #ffffff; --hjFeedbackDisabledAccentColor: #F1F2F6; --hjFeedbackDisabledAccentTextColor: rgba(0, 0, 0, 0.43); --hjFeedbackSecondaryTextColor: #666666; --hjFeedbackBackgroundColor: #ffffff; --hjFeedbackDarkGray: #333333; --hjFeedbackSelectionColor: #ffd902; --hjFeedbackSelectionTextColor: #3c3c3c; --hjFeedbackBorderColor: #e6e6e6; --hjFeedbackOptionButtonBackgroundColor: #e6e6e6; --hjFeedbackInputPlaceholderColor: rgba(255,255,255,0.38);">
-                <div id="_hj_feedback_container" class="_hj-zRk2h__Feedback__feedback _hj-z1NGf__Feedback__button">
-                    <div class="_hj-G09L+__MinimizedWidgetMiddle__container _hj-1QuqW__MinimizedWidgetMiddle__left"
-                        style="top: 484.5px;"><button class="_hj-ETLL8__MinimizedWidgetMiddle__label">
-                            <div class="_hj-Dfxkw__MinimizedWidgetMiddle__text">Feedback</div>
-                        </button></div>
                 </div>
             </div>
-        </div>
-    </div>
 </body><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     style="position: absolute; width: 0; height: 0" aria-hidden="true" id="__GURU_SVG_SPRITE_NODE__" role="hidden">
     <symbol viewBox="0 0 100 22" id="ghq-svg-guru-logo">
